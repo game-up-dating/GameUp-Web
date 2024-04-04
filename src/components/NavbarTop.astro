@@ -1,0 +1,41 @@
+---
+import { Navbar } from 'astro-bootstrap';
+import type { NavbarItemType } from 'astro-bootstrap';
+// demonstration data
+---
+
+<Navbar class="navbar-expand-lg navbar" data-bs-theme="dark">
+  <div class="container-fluid" id="navbar">
+    <div class="logo">
+      <img class="logo-img" src="/public/logo.png" />
+    </div>
+    <div>
+      
+    </div>
+    <div>hello</div>
+  </div>
+</Navbar>
+
+<style type="text/css">
+  .navbar {
+    background-color: var(--bg);
+  }
+  .navbar a {
+    color: var(--black);
+  }
+  .nav-link {
+    color: var(--black);
+  }
+
+  #navbar {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  .logo-img {
+    width: 10vh;
+  }
+  .logo {
+    justify-content: end;
+    display: flex;
+  }
+</style>
