@@ -1,0 +1,156 @@
+---
+
+---
+
+<div class="container" id="hero-cotainer">
+  <h1>
+    Master your <span class="highlight-gradient">Dating Game</span> With
+    <br />AI-Powered Chat Coaching
+  </h1>
+  <p class="subtext">
+    Upload your screenshot and get the level of flirtness with AI suggestions
+  </p>
+  <div class="row">
+    <div class="gradient-border-mask col-6">
+      <input type="text" class="gradient-input" placeholder="@gmail.com" />
+    </div>
+
+    <div class="btn btn-sign-in col-6">Get Early Access</div>
+  </div>
+  <div class="row">
+    <div class="circle-container"></div>
+    <div class="col-6 d-flex justify-content-end">
+      <img src="/public/images/HeroContainer1.png" />
+    </div>
+    <div class="col-6">
+      <img src="/public/images/HeroContainer2.png" />
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+    --gradient1: linear-gradient(
+      90deg,
+      rgba(250, 65, 120, 1) 0%,
+      rgba(255, 99, 76, 1) 100%
+    );
+  }
+
+  #hero-cotainer {
+    font-family: 'Work Sans', sans-serif;
+    padding: 5vh 5vw 5vh 5vw;
+  }
+
+  #hero-cotainer h1 {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .highlight-gradient {
+    background: var(--gradient1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtext {
+    margin: 1em 0.5em 0.5em 0.5em;
+    color: var(--grey1);
+    text-align: center;
+    font-family: 'Works Sans', sans-serif;
+  }
+
+  #signup-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  input {
+    --r: 15px; /* radius */
+    --b: 2px; /* border width */
+
+    padding: 0.5rem;
+    border: var(--b) solid transparent;
+    border-radius: var(--r);
+    background-image: linear-gradient(white, white), var(--gradient1);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    width: 264px;
+    position: relative;
+    z-index: 0;
+    text-decoration: none;
+  }
+
+  input::placeholder {
+    color: transparent;
+    background: var(--gradient1);
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+
+  input:focus {
+    outline: none; /* Removes the default outline */
+    border-color: #ff0000; /* Changes the border color to red */
+    box-shadow: none; /* Removes the default box-shadow */
+  }
+
+  .gradient-border-mask {
+    display: flex;
+    justify-content: end;
+    padding: 0.2vh 0.2vw;
+  }
+
+  .btn-sign-in {
+    background: var(--gradient1);
+    width: 10vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0.2vh 0.2vw;
+  }
+
+  .row:last-child {
+    position: relative; /* Ensure the circle is positioned relative to this container */
+  }
+  .circle-container {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center */
+    width: 600px; /* Adjust size as needed */
+    height: 600px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden; /* Ensure the gradient is contained within the circle */
+    z-index: -1; /* Place it behind other content */
+    /* Add a radial gradient overlay for smooth edges */
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.5),
+      transparent 100%
+    );
+    /* Layer blur effect */
+    backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+  }
+
+  .circle-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient1);
+    filter: blur(635px); /* Apply blur effect */
+    z-index: -1; /* Ensure the gradient is behind the content */
+    backdrop-filter: blur(
+      635px
+    ); /* Apply the blur effect to the content behind */
+    -webkit-backdrop-filter: blur(635px); /* For Safari */
+  }
+</style>
