@@ -5,37 +5,74 @@ import type { NavbarItemType } from 'astro-bootstrap';
 ---
 
 <Navbar class="navbar-expand-lg navbar" data-bs-theme="dark">
-  <div class="container-fluid" id="navbar">
+  <div class="container-fluid align-items-center" id="navbar">
     <div class="logo">
       <img class="logo-img" src="/public/logo.png" />
     </div>
-    <div>
-      
+    <div class="nav-link-container">
+      <div class="nav-link">Features</div>
+      <div class="nav-link">Chat Assistant</div>
+      <div class="nav-link">Pricing</div>
+      <div class="nav-link">Blog</div>
     </div>
-    <div>hello</div>
+    <div class="sign-in-container">
+      <div class="btn btn-sign-in">Sign In</div>
+    </div>
   </div>
+
+  <style type="text/css">
+    @font-face {
+      font-family: 'Geist';
+      src: url('/public/statics-woff/Geist-Regular.woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .sign-in-container {
+      display: flex;
+      justify-content: left;
+    }
+    .btn-sign-in {
+      background: var(--gradient1);
+      width: 6vw;
+    }
+    .navbar {
+      background-color: var(--bg);
+    }
+    .navbar a {
+      color: var(--black);
+    }
+    .nav-link {
+      color: var(--black);
+    }
+  
+    #navbar {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      color: #333230;
+      font-family: 'Geist', sans-serif;
+      align-items: center;
+    }
+    .logo-img {
+      width: 100px; /* Updated width */
+      height: 50px; /* Updated height */
+      object-fit: contain; /* Maintain aspect ratio */
+    }
+    .logo {
+      justify-content: end;
+      display: flex;
+    }
+    .nav-link-container {
+      display: flex;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding: 0.5em;
+      gap: 40px;
+      justify-content: center;
+    }
+  
+    .nav-link {
+      justify-content: center;
+      display: flex;
+    }
+  </style>
+  
 </Navbar>
-
-<style type="text/css">
-  .navbar {
-    background-color: var(--bg);
-  }
-  .navbar a {
-    color: var(--black);
-  }
-  .nav-link {
-    color: var(--black);
-  }
-
-  #navbar {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-  }
-  .logo-img {
-    width: 10vh;
-  }
-  .logo {
-    justify-content: end;
-    display: flex;
-  }
-</style>
