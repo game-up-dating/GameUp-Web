@@ -133,9 +133,11 @@
       rgba(255, 255, 255, 0.5),
       transparent 100%
     );
-    /* Layer blur effect */
-    backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    filter: blur(
+      300px
+    ); /* Adjusted layer blur effect for practical visibility */
+    backdrop-filter: blur(100px); /* Adjust the blur amount as needed */
+    -webkit-backdrop-filter: blur(20px); /* For Safari */
   }
 
   .circle-container::before {
@@ -145,12 +147,14 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient1);
-    filter: blur(635px); /* Apply blur effect */
+    background: var(
+      --gradient1
+    ); /* Define your gradient variable at a higher scope */
+    filter: blur(400px); /* Adjusted blur effect for a visible difference */
     z-index: -1; /* Ensure the gradient is behind the content */
     backdrop-filter: blur(
-      635px
-    ); /* Apply the blur effect to the content behind */
-    -webkit-backdrop-filter: blur(635px); /* For Safari */
+      40px
+    ); /* Increased blur effect to the content behind */
+    -webkit-backdrop-filter: blur(40px); /* For Safari */
   }
 </style>
