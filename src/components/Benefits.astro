@@ -1,0 +1,44 @@
+---
+import ListBenefits from './sub-components/ListBenefits.astro';
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>Unlock Your Dating Potential With GameUp</h1>
+      <p>GameUp makes it easy to find your best matches</p>
+    </div>
+    <div class="col-6">
+      <ListBenefits
+        name="Step-by-Step"
+        icon="/images/icons/step-by-step.png"
+        description="GameUp analyzes your conversations and provides AI-Generated suggestions to level up your dating skills. "
+        sidebar={true}
+      />
+      <ListBenefits
+        name="Ai Assistance"
+        icon="/images/icons/AI-As.png"
+        description="GameUp analyzes your conversations and provides AI-Generated suggestions to level up your dating skills. "
+        sidebar={true}
+      />
+      <ListBenefits
+        name="Conversation Analysis"
+        icon="/images/icons/convo.png"
+        description="GameUp analyzes your conversations and provides AI-Generated suggestions to level up your dating skills. "
+        sidebar={true}
+      />
+      <ListBenefits
+        name="Flirtiness Levels"
+        icon="/images/icons/flirt.png"
+        description="GameUp analyzes your conversations and provides AI-Generated suggestions to level up your dating skills. "
+        sidebar={true}
+      />
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  .container {
+    background-color: white;
+  }
+</style>

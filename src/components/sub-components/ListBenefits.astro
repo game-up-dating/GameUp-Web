@@ -1,0 +1,32 @@
+---
+interface Props {
+  name: string;
+  icon: string;
+  description: string;
+  sidebar: boolean;
+}
+
+const { name, icon, description, sidebar } = Astro.props;
+---
+
+<div class="container">
+  <div>
+    <img src={icon} alt="" />
+    <!-- {sidebar ? <div class="vl" /> : null} -->
+  </div>
+  <div>
+    <h3>{name}</h3>
+    <p>{description}</p>
+  </div>
+</div>
+
+<style>
+  .container {
+    grid-template-columns: 2fr 10fr;
+    display: grid;
+  }
+  .vl {
+    border-left: 2.5px solid var(--grey2);
+    height: 100%;
+  }
+</style>
