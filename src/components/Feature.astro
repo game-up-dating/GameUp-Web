@@ -9,17 +9,88 @@
       with AI-Assisted
     </h1>
     <p>
-      GameUp 
+      GameUp uses AI to help you improve your dating <br />skills by providing
+      personalized suggested based on <br /> your conversations.
     </p>
-
-
+    <div class="row mt-5">
+      <div class="col-6">
+        <img src="images/icons/AI.png" alt="" />
+        <h2>AI- Powered</h2>
+        <p>
+          Get real-time feedback and suggestions to level up your flirting game.
+        </p>
+      </div>
+      <div class="col-6">
+        <img src="images/icons/PT.png" alt="" />
+        <h2>Personalized Tips</h2>
+        <p>
+          Tailored advice on how to make your conversations engaging with
+          soulmates
+        </p>
+      </div>
+    </div>
   </div>
-  <div>hello</div>
+  <div>
+    <img src="/images/Features1.png" />
+    <div class="circle-container"></div>
+  </div>
 </div>
 
 <style>
   .main-grid {
     grid-template-columns: 1fr 1fr;
     display: grid;
+  }
+
+  .circle-container {
+    position: absolute; /* Changed to absolute to ensure proper overlay */
+    bottom: 0%; /* Adjusted to position correctly relative to the image */
+    left: 80%; /* Centered horizontally */
+    transform: translate(
+      -50%,
+      50%
+    ); /* Adjust position to center behind the image */
+    width: 600px; /* Adjust size as needed */
+    height: 600px; /* Adjust size as needed */
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden; /* Ensure the gradient is contained within the circle */
+    z-index: -1; /* Lower z-index to ensure it's behind the image */
+    /* Add a radial gradient overlay for smooth edges */
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.5),
+      transparent 100%
+    );
+    filter: blur(
+      300px
+    ); /* Adjusted layer blur effect for practical visibility */
+    backdrop-filter: blur(100px); /* Adjust the blur amount as needed */
+    -webkit-backdrop-filter: blur(20px); /* For Safari */
+  }
+
+  .circle-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(
+      --gradient1
+    ); /* Define your gradient variable at a higher scope */
+    filter: blur(400px); /* Adjusted blur effect for a visible difference */
+    z-index: -1; /* Ensure the gradient is behind the content */
+    backdrop-filter: blur(
+      40px
+    ); /* Increased blur effect to the content behind */
+    -webkit-backdrop-filter: blur(40px); /* For Safari */
+  }
+  p {
+    color: black;
+  }
+  /* Ensure the image is positioned correctly relative to the circle */
+  img {
+    position: relative;
+    z-index: 1; /* Ensure the image is in front of the circle */
   }
 </style>

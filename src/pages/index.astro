@@ -6,8 +6,15 @@ import Feature from '../components/Feature.astro';
 ---
 
 <Layout title="GameUp">
-  <NavbarTop />
-  <SignUp />
-  <Feature />
-  <style></style>
+  <div class="root">
+    <NavbarTop />
+    <SignUp />
+    <Feature />
+  </div>
+
+  <style>
+    .root {
+      padding: 0vh 5vw 0vh 5vw;
+    }
+  </style>
 </Layout>
