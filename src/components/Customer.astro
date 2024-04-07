@@ -1,0 +1,32 @@
+---
+import { CarouselSpacing } from './sub-components/Customer';
+---
+
+<div id="main-container">
+  <div id="top-row">
+    <div>
+      <h1>Customer</h1>
+      <p>See what our early birds have to say</p>
+    </div>
+    <div>
+      <img src="images/customer/CustomerBackground.png" />
+    </div>
+  </div>
+  <div id="bottom-row">
+    <CarouselSpacing client:only="react" />
+  </div>
+</div>
+
+<style>
+  #top-row {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  #bottom-row {
+    display: flex;
+    justify-content: center;
+  }
+  #main-container {
+  }
+</style>
