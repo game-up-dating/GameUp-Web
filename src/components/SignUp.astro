@@ -1,5 +1,5 @@
 ---
-
+import SignUpForm from './sub-components/SignUpForm.astro';
 ---
 
 <div class="container" id="hero-cotainer">
@@ -10,13 +10,7 @@
   <p class="subtext">
     Upload your screenshot and get the level of flirtness with AI suggestions
   </p>
-  <div class="row">
-    <div class="gradient-border-mask col-6">
-      <input type="text" class="gradient-input" placeholder="@gmail.com" />
-    </div>
-
-    <div class="btn btn-sign-in col-6">Get Early Access</div>
-  </div>
+  <SignUpForm />
   <div class="row">
     <div class="circle-container"></div>
     <div class="col-6 d-flex justify-content-end">
@@ -39,7 +33,6 @@
 
   #hero-cotainer {
     font-family: 'Work Sans', sans-serif;
-
   }
 
   #hero-cotainer h1 {
@@ -65,53 +58,6 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-  }
-
-  input {
-    --r: 15px; /* radius */
-    --b: 2px; /* border width */
-
-    padding: 0.5rem;
-    border: var(--b) solid transparent;
-    border-radius: var(--r);
-    background-image: linear-gradient(white, white), var(--gradient1);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    width: 264px;
-    position: relative;
-    z-index: 0;
-    text-decoration: none;
-  }
-
-  input::placeholder {
-    color: transparent;
-    background: var(--gradient1);
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-
-  input:focus {
-    outline: none; /* Removes the default outline */
-    border-color: #ff0000; /* Changes the border color to red */
-    box-shadow: none; /* Removes the default box-shadow */
-  }
-
-  .gradient-border-mask {
-    display: flex;
-    justify-content: end;
-    padding: 0.2vh 0.2vw;
-  }
-
-  .btn-sign-in {
-    background: var(--gradient1);
-    width: 10vw;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0.2vh 0.2vw;
   }
 
   .row:last-child {
