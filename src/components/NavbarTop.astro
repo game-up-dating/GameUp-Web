@@ -19,53 +19,54 @@ import type { NavbarItemType } from 'astro-bootstrap';
       <div class="btn btn-sign-in">Sign In</div>
     </div>
   </div>
+
+  <style>
+    .sign-in-container {
+      display: flex;
+      justify-content: left;
+    }
+    .btn-sign-in {
+      background: var(--gradient1);
+      width: 6vw;
+    }
+    .navbar {
+      background-color: var(--bg);
+    }
+    .navbar a {
+      color: var(--black);
+    }
+    .nav-link {
+      color: var(--black);
+    }
+
+    #navbar {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr;
+      color: #333230;
+      font-family: 'Geist', sans-serif;
+      font-weight: 500;
+      align-items: center;
+    }
+    .logo-img {
+      width: 100px; /* Updated width */
+      height: 50px; /* Updated height */
+      object-fit: contain; /* Maintain aspect ratio */
+    }
+    .logo {
+      justify-content: end;
+      display: flex;
+    }
+    .nav-link-container {
+      display: flex;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      padding: 0.5em;
+      gap: 40px;
+      justify-content: center;
+    }
+
+    .nav-link {
+      justify-content: center;
+      display: flex;
+    }
+  </style>
 </Navbar>
-<style>
-  .sign-in-container {
-    display: flex;
-    justify-content: left;
-  }
-  .btn-sign-in {
-    background: var(--gradient1);
-    width: 6vw;
-  }
-  .navbar {
-    background-color: var(--bg);
-  }
-  .navbar a {
-    color: var(--black);
-  }
-  .nav-link {
-    color: var(--black);
-  }
-
-  #navbar {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    color: #333230;
-    font-family: 'Geist', sans-serif;
-    font-weight: 500;
-    align-items: center;
-  }
-  .logo-img {
-    width: 100px; /* Updated width */
-    height: 50px; /* Updated height */
-    object-fit: contain; /* Maintain aspect ratio */
-  }
-  .logo {
-    justify-content: end;
-    display: flex;
-  }
-  .nav-link-container {
-    display: flex;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 0.5em;
-    gap: 40px;
-    justify-content: center;
-  }
-
-  .nav-link {
-    justify-content: center;
-    display: flex;
-  }
-</style>

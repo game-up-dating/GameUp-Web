@@ -2,7 +2,7 @@
 import SignUpForm from './sub-components/SignUpForm.astro';
 ---
 
-<div class="container" id="hero-cotainer">
+<div class="container" id="hero-container">
   <h1>
     Master your <span class="highlight-gradient">Dating Game</span> With
     <br />AI-Powered Chat Coaching
@@ -11,7 +11,7 @@ import SignUpForm from './sub-components/SignUpForm.astro';
     Upload your screenshot and get the level of flirtness with AI suggestions
   </p>
   <SignUpForm />
-  <div class="row">
+  <div class="row d-flex">
     <div class="circle-container"></div>
     <div class="col-6 d-flex justify-content-end">
       <img src="/public/images/HeroContainer1.png" />
@@ -31,13 +31,15 @@ import SignUpForm from './sub-components/SignUpForm.astro';
     );
   }
 
-  #hero-cotainer {
+  #hero-container {
     font-family: 'Work Sans', sans-serif;
+    padding: 0 20px; /* Add some padding to the container */
   }
 
-  #hero-cotainer h1 {
+  #hero-container h1 {
     text-align: center;
     font-weight: 600;
+    font-size: 24px; /* Adjust font size for mobile */
   }
 
   .highlight-gradient {
@@ -52,55 +54,33 @@ import SignUpForm from './sub-components/SignUpForm.astro';
     color: var(--grey1);
     text-align: center;
     font-family: 'Works Sans', sans-serif;
+    font-size: 14px; /* Adjust font size for mobile */
   }
 
-  #signup-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
+  .row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
   }
 
-  .row:last-child {
-    position: relative; /* Ensure the circle is positioned relative to this container */
+  .col-6 {
+    flex: 0 0 100%; /* Take full width on small screens */
+    max-width: 100%; /* Ensure images don't overflow */
   }
+
   .circle-container {
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to center */
-    width: 600px; /* Adjust size as needed */
-    height: 600px; /* Adjust size as needed */
-    border-radius: 50%; /* Make it a circle */
-    overflow: hidden; /* Ensure the gradient is contained within the circle */
-    z-index: -1; /* Place it behind other content */
-    /* Add a radial gradient overlay for smooth edges */
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.5),
-      transparent 100%
-    );
-    filter: blur(
-      300px
-    ); /* Adjusted layer blur effect for practical visibility */
-    backdrop-filter: blur(100px); /* Adjust the blur amount as needed */
-    -webkit-backdrop-filter: blur(20px); /* For Safari */
+    display: none; /* Hide the circle container on small screens */
   }
 
-  .circle-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(
-      --gradient1
-    ); /* Define your gradient variable at a higher scope */
-    filter: blur(400px); /* Adjusted blur effect for a visible difference */
-    z-index: -1; /* Ensure the gradient is behind the content */
-    backdrop-filter: blur(
-      40px
-    ); /* Increased blur effect to the content behind */
-    -webkit-backdrop-filter: blur(40px); /* For Safari */
+  @media only screen and (min-width: 600px) {
+    /* Apply styles for screens larger than 600px */
+    .col-6 {
+      flex: 0 0 50%; /* Take half width on larger screens */
+      max-width: 50%; /* Ensure images don't overflow and are side by side */
+    }
+
+    .circle-container {
+      display: block; /* Show the circle container on larger screens */
+      /* Add your circle container styles here if needed */
+    }
   }
 </style>

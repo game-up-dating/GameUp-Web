@@ -93,4 +93,13 @@
     position: relative;
     z-index: 1; /* Ensure the image is in front of the circle */
   }
+
+  @media only screen and (max-width: 600px) {
+    /* Apply styles for screens larger than 768px (tablets and desktops) */
+
+    .circle-container {
+      display: none; /* Show the circle container on larger screens */
+      /* Add your circle container styles here */
+    }
+  }
 </style>

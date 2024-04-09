@@ -24,5 +24,15 @@ import EarlyAcess from '@/components/EarlyAcess.astro';
     .root {
       padding: 0vh 0vw 0vh 0vw;
     }
+    @media only screen and (max-width: 600px) {
+      html {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 100%;
+      }
+    }
   </style>
 </Layout>
