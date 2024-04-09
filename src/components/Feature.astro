@@ -12,17 +12,21 @@
       GameUp uses AI to help you improve your dating <br />skills by providing
       personalized suggested based on <br /> your conversations.
     </p>
-    <div class="row mt-5">
-      <div class="col-6">
-        <img src="images/icons/AI.png" alt="" />
-        <h2>AI- Powered</h2>
+    <div class="sub-grid mt-5">
+      <div>
+        <div class="icon-title">
+          <img src="images/icons/AI.png" alt="" />
+          <h2>AI- Powered</h2>
+        </div>
         <p>
           Get real-time feedback and suggestions to level up your flirting game.
         </p>
       </div>
-      <div class="col-6">
-        <img src="images/icons/PT.png" alt="" />
-        <h2>Personalized Tips</h2>
+      <div>
+        <div class="icon-title">
+          <img src="images/icons/PT.png" alt="" />
+          <h2>Personalized Tips</h2>
+        </div>
         <p>
           Tailored advice on how to make your conversations engaging with
           soulmates
@@ -68,6 +72,10 @@
     -webkit-backdrop-filter: blur(20px); /* For Safari */
   }
 
+  .sub-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   .circle-container::before {
     content: '';
     position: absolute;
@@ -100,6 +108,22 @@
     .circle-container {
       display: none; /* Show the circle container on larger screens */
       /* Add your circle container styles here */
+    }
+    .main-grid {
+      grid-template-columns: 1fr;
+      display: grid;
+    }
+    .sub-grid {
+      grid-template-columns: 1fr;
+    }
+    .icon-title {
+      display: flex;
+      align-items: center;
+
+      h2 {
+        margin: 0;
+        padding: 0 2 em;
+      }
     }
   }
 </style>

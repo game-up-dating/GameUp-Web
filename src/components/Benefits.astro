@@ -3,12 +3,12 @@ import ListBenefits from './sub-components/ListBenefits.astro';
 ---
 
 <div class="container">
-  <div class="row">
-    <div class="col-6">
+  <div class="grid">
+    <div>
       <h1>Unlock Your Dating Potential With GameUp</h1>
       <p>GameUp makes it easy to find your best matches</p>
     </div>
-    <div class="col-6">
+    <div>
       <ListBenefits
         name="Step-by-Step"
         icon="/images/icons/step-by-step.png"
@@ -40,5 +40,15 @@ import ListBenefits from './sub-components/ListBenefits.astro';
 <style type="text/css">
   .container {
     background-color: white;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
