@@ -14,7 +14,7 @@ const { name, icon, description, sidebar } = Astro.props;
     <img src={icon} alt="" />
     <!-- {sidebar ? <div class="vl" /> : null} -->
   </div>
-  <div>
+  <div class="right-side">
     <h3>{name}</h3>
     <p>{description}</p>
   </div>
@@ -28,5 +28,17 @@ const { name, icon, description, sidebar } = Astro.props;
   .vl {
     border-left: 2.5px solid var(--grey2);
     height: 100%;
+  }
+  .right-side {
+    padding-top: 0.75em;
+  }
+  @media only screen and (max-width: 600px) {
+    p {
+      text-align: justify;
+    }
+
+    .container {
+      padding: 0;
+    }
   }
 </style>

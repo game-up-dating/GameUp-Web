@@ -12,7 +12,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn('w-[56rem]', className)}
+    className={cn('lg:w-[56rem]', className)}
     {...props}
   />
 ));

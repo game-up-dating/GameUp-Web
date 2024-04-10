@@ -1,13 +1,19 @@
 ---
 import { Navbar } from 'astro-bootstrap';
 import type { NavbarItemType } from 'astro-bootstrap';
-// demonstration data
 ---
 
 <Navbar class="navbar-expand-lg navbar" data-bs-theme="dark">
   <div class="container-fluid align-items-center" id="navbar">
     <div class="logo">
       <img class="logo-img" src="/public/logo.png" />
+    </div>
+    <!-- Hamburger menu icon -->
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <span>Features</span>
+      <span>Chat Assistant</span>
+      <span>Pricing</span>
+      <span>Blog</span>
     </div>
     <div class="nav-link-container">
       <div class="nav-link">Features</div>
@@ -16,18 +22,24 @@ import type { NavbarItemType } from 'astro-bootstrap';
       <div class="nav-link">Blog</div>
     </div>
     <div class="sign-in-container">
-      <div class="btn btn-sign-in">Sign In</div>
+      <button class="btn btn-sign-in">Sign In</button>
     </div>
   </div>
 
   <style>
     .sign-in-container {
       display: flex;
-      justify-content: left;
+      justify-content: flex-end;
+      align-items: center;
     }
     .btn-sign-in {
       background: var(--gradient1);
-      width: 6vw;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
     }
     .navbar {
       background-color: var(--bg);
@@ -68,5 +80,59 @@ import type { NavbarItemType } from 'astro-bootstrap';
       justify-content: center;
       display: flex;
     }
+
+    /* Hamburger menu styles */
+    .hamburger-menu {
+      display: none; /* Hide by default */
+      cursor: pointer;
+    }
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: var(--black);
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+    }
+    .menu-visible .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    .menu-visible .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-visible .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 768px) {
+      .nav-link-container {
+        display: none; /* Hide regular navigation links */
+      }
+      .hamburger-menu {
+        display: flex; /* Show hamburger menu icon */
+        justify-content: space-around;
+        font-size: smaller;
+        align-items: center;
+      }
+
+      .btn-sign-in {
+        padding: 0.5em;
+      }
+    }
   </style>
+
+  <script>
+    function toggleMenu() {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const mobileSidebar = document.getElementById('mobile-sidebar');
+
+      // Type guard to ensure hamburgerMenu and mobileSidebar are not null
+      if (hamburgerMenu && mobileSidebar) {
+        hamburgerMenu.classList.toggle('menu-visible');
+        mobileSidebar.style.display =
+          mobileSidebar.style.display === 'none' ? 'block' : 'none';
+      }
+    }
+  </script>
 </Navbar>

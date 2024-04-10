@@ -25,7 +25,6 @@ export function AccordianComponent() {
             upload conversations screenshots and prefered “Flirtiness Level”
           </AccordionContent>
         </AccordionItem>
-
         <AccordionItem value="item-3">
           <AccordionTrigger>What is GameUp</AccordionTrigger>
           <AccordionContent>
