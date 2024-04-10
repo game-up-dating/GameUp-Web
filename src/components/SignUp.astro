@@ -13,7 +13,7 @@ import SignUpForm from './sub-components/SignUpForm.astro';
   <SignUpForm />
   <div class="row d-flex">
     <div class="circle-container"></div>
-    <div class="col-6 d-flex justify-content-end">
+    <div id="first-img" class="col-6 d-flex justify-content-end">
       <img src="/public/images/HeroContainer1.png" />
     </div>
     <div class="col-6">
@@ -81,6 +81,12 @@ import SignUpForm from './sub-components/SignUpForm.astro';
     .circle-container {
       display: block; /* Show the circle container on larger screens */
       /* Add your circle container styles here if needed */
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    #first-img {
+      padding-right: 1.4em;
     }
   }
 </style>
