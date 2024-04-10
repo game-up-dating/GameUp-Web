@@ -3,15 +3,18 @@
 ---
 
 <div class="container main-grid">
-  <div class="">
-    <h1>
-      Boosting your Dating skills <br />
-      with AI-Assisted
-    </h1>
-    <p>
-      GameUp uses AI to help you improve your dating <br />skills by providing
-      personalized suggested based on <br /> your conversations.
-    </p>
+  <div class="initial-title">
+    <div>
+      <h1>
+        Boosting your Dating skills <br />
+        with AI-Assisted
+      </h1>
+      <p>
+        GameUp uses AI to help you improve your dating skills by providing
+        personalized suggested based on your conversations.
+      </p>
+    </div>
+
     <div class="sub-grid mt-5">
       <div>
         <div class="icon-title">
@@ -112,6 +115,8 @@
     .main-grid {
       grid-template-columns: 1fr;
       display: grid;
+      padding: 1.5em;
+      text-align: justify;
     }
     .sub-grid {
       grid-template-columns: 1fr;
@@ -122,8 +127,14 @@
 
       h2 {
         margin: 0;
-        padding: 0 2 em;
+        padding: 0em 0em 0em 0.5em;
       }
+      p {
+        padding-top: 2em;
+      }
+    }
+
+    .initial-title {
     }
   }
 </style>
