@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./styles/SignUp.module.css";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -35,17 +36,17 @@ export default function SignUp() {
       className="d-flex align-items-center justify-center"
       style={{ height: "100vh" }}
     >
-      <div className="card">
+      <div className={styles.card}>
         <h2>SignUp Form</h2>
 
-        <form className="form" method="POST">
+        <form className={styles.form} method="POST">
           <input
             type="text"
             placeholder="username"
             onChange={(e) => {
               setName(e.target.value);
             }}
-            className="pass"
+            className={styles.pass}
           />
           <input
             type="email"
@@ -53,7 +54,7 @@ export default function SignUp() {
               setEmail(e.target.value);
             }}
             placeholder="Email Adress"
-            className="email"
+            className={styles.email}
           />
           <input
             type="password"
@@ -61,17 +62,12 @@ export default function SignUp() {
               setPass(e.target.value);
             }}
             placeholder="password"
-            className="pass"
+            className={styles.pass}
           />
-          <button type="submit" onClick={push} className="login_btn">
+          <button type="submit" onClick={push} className={styles.login_btn}>
             Sign Up
           </button>
         </form>
-      </div>
-
-      <div className="footer_card">
-        <p>Not a member?</p>
-        <a href="#">Singup now</a>
       </div>
     </div>
   );
