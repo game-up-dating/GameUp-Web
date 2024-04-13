@@ -1,14 +1,12 @@
 ---
-import LearnMore from './sub-components/LearnMore.astro';
+import GradientButton from './sub-components/GradientButton.astro';
+import LearnMore from './sub-components/GradientButton.astro';
 ---
 
-<div class="container main-grid">
-  <div class="initial-title">
+<div class="main-grid m-5">
+  <div class="initial-title p5">
     <div>
-      <h1>
-        Boosting your Dating skills <br />
-        with AI-Assisted
-      </h1>
+      <h1>Boosting your Dating skills with <br />AI-Assisted Chatting</h1>
       <p>
         GameUp uses AI to help you improve your dating skills by providing
         personalized suggested based on your conversations.
@@ -36,11 +34,11 @@ import LearnMore from './sub-components/LearnMore.astro';
         </p>
       </div>
       <div class="col-6">
-        <LearnMore />
+        <GradientButton text="Learn More" />
       </div>
     </div>
   </div>
-  <div>
+  <div class="d-flex justify-content-center">
     <img src="/images/Features1.png" />
     <div class="circle-container"></div>
   </div>
@@ -50,6 +48,8 @@ import LearnMore from './sub-components/LearnMore.astro';
   .main-grid {
     grid-template-columns: 1fr 1fr;
     display: grid;
+    gap: 10vw;
+    text-align: justify;
   }
 
   .circle-container {
@@ -81,6 +81,8 @@ import LearnMore from './sub-components/LearnMore.astro';
   .sub-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 10%;
+    text-align: justify;
   }
   .circle-container::before {
     content: '';

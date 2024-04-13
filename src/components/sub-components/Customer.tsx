@@ -1,38 +1,38 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
+} from "@/components/ui/carousel";
 
 const Content = [
   {
-    name: 'John Doe',
-    designation: 'Dating Expert, LoveCo',
+    name: "John Doe",
+    designation: "Dating Expert, LoveCo",
     rateing: 5,
-    review: '“GameUp is a game-changer in the dating world”',
+    review: "“GameUp is a game-changer in the dating world”",
   },
   {
-    name: 'Jane Smith',
-    designation: 'Relationship Coach, LoveCo',
+    name: "Jane Smith",
+    designation: "Relationship Coach, LoveCo",
     rating: 5,
-    review: '“GameUp is a game-changer in the dating world”',
+    review: "“GameUp is a game-changer in the dating world”",
   },
   {
-    name: 'Jane Smith',
-    designation: 'Relationship Coach, LoveCo',
+    name: "Jane Smith",
+    designation: "Relationship Coach, LoveCo",
     rating: 5,
-    review: '“GameUp is a game-changer in the dating world”',
+    review: "“GameUp is a game-changer in the dating world”",
   },
   {
-    name: 'Jane Smith',
-    designation: 'Relationship Coach, LoveCo',
+    name: "Jane Smith",
+    designation: "Relationship Coach, LoveCo",
     rating: 5,
-    review: '“GameUp is a game-changer in the dating world”',
+    review: "“GameUp is a game-changer in the dating world”",
   },
 ];
 
@@ -49,10 +49,15 @@ export function CarouselSpacing() {
               <div className="p-1">
                 <Card>
                   <CardContent className="aspect-square items-center justify-center w-auto p-2 pt-4">
-                    <div>
-                      <p className="font-bold">{item.name}</p>
+                    <div className="flex mb-3">
+                      <div className="w-1/5 pr-1">
+                        <img src="/images/avatar/demo.png" alt="" />
+                      </div>
+                      <div className="w-4/5">
+                        <p className="font-bold m-0">{item.name}</p>
+                        <p className="m-0">{item.designation}</p>
+                      </div>
                     </div>
-                    <p>{item.designation}</p>
                     <div className="flex">
                       {Array.from({ length: 5 }).map((item) => (
                         <img src="/images/icons/star.png" />
@@ -68,7 +73,6 @@ export function CarouselSpacing() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    
     </>
   );
 }

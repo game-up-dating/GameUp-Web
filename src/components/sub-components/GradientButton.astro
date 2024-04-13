@@ -1,0 +1,28 @@
+---
+interface Props {
+  text: string;
+  link?: string;
+}
+const { link = '#', text } = Astro.props;
+---
+
+<a class="" href={link}>
+  <button class="p-3 pt-2 pb-2"><span>{text}</span></button></a
+>
+<style>
+  button {
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      var(--gradient1) border-box;
+    color: #313149;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    display: inline-block;
+  }
+  button span {
+    background: var(--gradient1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+</style>

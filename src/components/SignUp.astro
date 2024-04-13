@@ -3,14 +3,17 @@ import SignUpForm from './sub-components/SignUpForm.astro';
 ---
 
 <div class="container" id="hero-container">
-  <h1>
-    Master your <span class="highlight-gradient">Dating Game</span> With
-    <br />AI-Powered Chat Coaching
-  </h1>
-  <p class="subtext">
-    Upload your screenshot and get the level of flirtness with AI suggestions
-  </p>
-  <SignUpForm />
+  <div class="mb-4">
+    <h1>
+      Master your <span class="highlight-gradient">Dating Game</span> With
+      <br />AI-Powered Chat Coaching
+    </h1>
+    <p class="subtext">
+      Upload your screenshot and get the level of flirtness with AI suggestions
+    </p>
+  </div>
+
+  <SignUpForm class="mb-5" />
   <div class="row d-flex">
     <div class="circle-container"></div>
     <div id="first-img" class="col-6 d-flex justify-content-end">
@@ -33,7 +36,7 @@ import SignUpForm from './sub-components/SignUpForm.astro';
 
   #hero-container {
     font-family: 'Work Sans', sans-serif;
-    padding: 0 20px; /* Add some padding to the container */
+    padding: 4% 20px; /* Add some padding to the container */
   }
 
   #hero-container h1 {

@@ -58,7 +58,7 @@ export default function SignUp() {
           />
           <input
             type="password"
-            onChange={(e) => {
+          onChange={(e) => {
               setPass(e.target.value);
             }}
             placeholder="password"
