@@ -22,7 +22,9 @@ const { name, icon, description, sidebar } = Astro.props;
 
 <style>
   .container {
+    -ms-grid-columns: 2fr 10fr;
     grid-template-columns: 2fr 10fr;
+    display: -ms-grid;
     display: grid;
   }
   .vl {

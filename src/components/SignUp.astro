@@ -60,11 +60,16 @@ import SignUpForm from './sub-components/SignUpForm.astro';
   }
 
   .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
   }
 
   .col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
     flex: 0 0 100%; /* Take full width on small screens */
     max-width: 100%; /* Ensure images don't overflow */
   }
@@ -76,6 +81,8 @@ import SignUpForm from './sub-components/SignUpForm.astro';
   @media only screen and (min-width: 600px) {
     /* Apply styles for screens larger than 600px */
     .col-6 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
       flex: 0 0 50%; /* Take half width on larger screens */
       max-width: 50%; /* Ensure images don't overflow and are side by side */
     }

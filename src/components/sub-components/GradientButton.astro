@@ -12,6 +12,13 @@ const { link = '#', text } = Astro.props;
 <style>
   button {
     background:
+      -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff))
+        padding-box,
+      var(--gradient1) border-box;
+    background:
+      -o-linear-gradient(#fff, #fff) padding-box,
+      var(--gradient1) border-box;
+    background:
       linear-gradient(#fff, #fff) padding-box,
       var(--gradient1) border-box;
     color: #313149;

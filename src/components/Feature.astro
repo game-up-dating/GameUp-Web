@@ -45,105 +45,83 @@ import LearnMore from './sub-components/GradientButton.astro';
 </div>
 
 <style>
-  .main-grid {
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-    gap: 10vw;
-    text-align: justify;
+  /*
+  * Prefixed by https://autoprefixer.github.io
+  * PostCSS: v8.4.14,
+  * Autoprefixer: v10.4.7
+  * Browsers: last 4 version
+  */
+
+  :root {
+    --gradient1: linear-gradient(
+      90deg,
+      rgba(250, 65, 120, 1) 0%,
+      rgba(255, 99, 76, 1) 100%
+    );
+  }
+
+  #hero-container {
+    font-family: 'Work Sans', sans-serif;
+    padding: 4% 20px; /* Add some padding to the container */
+  }
+
+  #hero-container h1 {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .highlight-gradient {
+    background: var(--gradient1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtext {
+    margin: 1em 0.5em 0.5em 0.5em;
+    color: var(--grey1);
+    text-align: center;
+    font-family: 'Works Sans', sans-serif;
+    font-size: 14px; /* Adjust font size for mobile */
+  }
+
+  .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow items to wrap to next line on small screens */
+  }
+
+  .col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%; /* Take full width on small screens */
+    max-width: 100%; /* Ensure images don't overflow */
   }
 
   .circle-container {
-    position: absolute; /* Changed to absolute to ensure proper overlay */
-    bottom: 0%; /* Adjusted to position correctly relative to the image */
-    left: 80%; /* Centered horizontally */
-    transform: translate(
-      -50%,
-      50%
-    ); /* Adjust position to center behind the image */
-    width: 600px; /* Adjust size as needed */
-    height: 600px; /* Adjust size as needed */
-    border-radius: 50%; /* Make it a circle */
-    overflow: hidden; /* Ensure the gradient is contained within the circle */
-    z-index: -1; /* Lower z-index to ensure it's behind the image */
-    /* Add a radial gradient overlay for smooth edges */
-    background: radial-gradient(
-      circle at center,
-      rgba(255, 255, 255, 0.5),
-      transparent 100%
-    );
-    filter: blur(
-      300px
-    ); /* Adjusted layer blur effect for practical visibility */
-    backdrop-filter: blur(100px); /* Adjust the blur amount as needed */
-    -webkit-backdrop-filter: blur(20px); /* For Safari */
+    display: none; /* Hide the circle container on small screens */
   }
 
-  .sub-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10%;
-    text-align: justify;
-  }
-  .circle-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(
-      --gradient1
-    ); /* Define your gradient variable at a higher scope */
-    filter: blur(400px); /* Adjusted blur effect for a visible difference */
-    z-index: -1; /* Ensure the gradient is behind the content */
-    backdrop-filter: blur(
-      40px
-    ); /* Increased blur effect to the content behind */
-    -webkit-backdrop-filter: blur(40px); /* For Safari */
-  }
-  p {
-    color: black;
-  }
-  /* Ensure the image is positioned correctly relative to the circle */
-  img {
-    position: relative;
-    z-index: 1; /* Ensure the image is in front of the circle */
+  @media only screen and (min-width: 600px) {
+    /* Apply styles for screens larger than 600px */
+    .col-6 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%; /* Take half width on larger screens */
+      max-width: 50%; /* Ensure images don't overflow and are side by side */
+    }
+
+    .circle-container {
+      display: block; /* Show the circle container on larger screens */
+      /* Add your circle container styles here if needed */
+    }
   }
 
   @media only screen and (max-width: 600px) {
-    /* Apply styles for screens larger than 768px (tablets and desktops) */
-
-    .circle-container {
-      display: none; /* Show the circle container on larger screens */
-      /* Add your circle container styles here */
-    }
-
-    .main-grid {
-      grid-template-columns: 1fr;
-      display: grid;
-      padding: 1.5em;
-      margin: 0 !important;
-    }
-    p {
-      text-align: justify;
-    }
-    .sub-grid {
-      grid-template-columns: 1fr;
-    }
-    .icon-title {
-      display: flex;
-      align-items: center;
-
-      h2 {
-        margin: 0;
-        padding: 0em 0em 0em 0.5em;
-      }
-      p {
-        padding-top: 2em;
-      }
-    }
-
-    .initial-title {
+    #first-img {
+      padding-right: 1.4em;
     }
   }
 </style>

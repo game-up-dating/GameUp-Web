@@ -16,7 +16,16 @@ import { AccordianComponent } from './sub-components/Accordian';
 </div>
 
 <style>
+  /*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
   #questions {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
   }
@@ -27,6 +36,8 @@ import { AccordianComponent } from './sub-components/Accordian';
     position: absolute;
     /* bottom: 100%; */
     /* left: 50%;  */
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); /* Adjust position to center */
     width: 600px; /* Adjust size as needed */
     height: 600px; /* Adjust size as needed */
@@ -34,11 +45,18 @@ import { AccordianComponent } from './sub-components/Accordian';
     overflow: hidden; /* Ensure the gradient is contained within the circle */
     z-index: -1; /* Place it behind other content */
     /* Add a radial gradient overlay for smooth edges */
+    background: -o-radial-gradient(
+      center,
+      circle,
+      rgba(255, 255, 255, 0.5),
+      transparent 100%
+    );
     background: radial-gradient(
       circle at center,
       rgba(255, 255, 255, 0.5),
       transparent 100%
     );
+    -webkit-filter: blur(300px);
     filter: blur(
       300px
     ); /* Adjusted layer blur effect for practical visibility */
@@ -56,6 +74,7 @@ import { AccordianComponent } from './sub-components/Accordian';
     background: var(
       --gradient1
     ); /* Define your gradient variable at a higher scope */
+    -webkit-filter: blur(400px);
     filter: blur(400px); /* Adjusted blur effect for a visible difference */
     z-index: -1; /* Ensure the gradient is behind the content */
     backdrop-filter: blur(

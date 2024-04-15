@@ -46,13 +46,16 @@ import ListBenefits from './sub-components/ListBenefits.astro';
     background-color: white;
   }
   .grid {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 14vw 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 14vw;
   }
 
   @media only screen and (max-width: 600px) {
     .grid {
+      -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
     }
   }
