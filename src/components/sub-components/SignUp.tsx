@@ -58,13 +58,13 @@ export default function SignUp() {
           />
           <input
             type="password"
-          onChange={(e) => {
+            onChange={(e) => {
               setPass(e.target.value);
             }}
             placeholder="password"
             className={styles.pass}
           />
-          <button type="submit" onClick={push} className={styles.login_btn}>
+          <button type="submit" onClick={push} className={styles.btnSignin}>
             Sign Up
           </button>
         </form>

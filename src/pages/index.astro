@@ -7,6 +7,7 @@ import Benefits from '../components/Benefits.astro';
 import Customer from '../components/Customer.astro';
 import Faq from '@/components/faq.astro';
 import EarlyAcess from '@/components/EarlyAcess.astro';
+import Footer from '@/components/Footer.astro';
 ---
 
 <Layout title="GameUp">
@@ -18,21 +19,21 @@ import EarlyAcess from '@/components/EarlyAcess.astro';
     <Customer />
     <Faq />
     <EarlyAcess />
+    <Footer />
   </div>
-
-  <style>
-    .root {
-      padding: 0vh 0vw 0vh 0vw;
-    }
-    @media only screen and (max-width: 600px) {
-      html {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-      }
-      body {
-        width: 100%;
-      }
-    }
-  </style>
 </Layout>
+<style>
+  .root {
+    padding: 0vh 0vw 0vh 0vw;
+  }
+  @media only screen and (max-width: 600px) {
+    html {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      width: 100%;
+    }
+  }
+</style>

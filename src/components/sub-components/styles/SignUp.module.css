@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   text-decoration: none;
 }
 
@@ -69,6 +69,7 @@
   color: #a0a6a3;
   font-family: 'Roboto Mono', sans-serif;
   box-shadow: 1px 5px 9px rgba(211, 211, 211, 0.7);
+  border-radius: 14px;
 }
 
 .form input.email {
@@ -79,18 +80,15 @@
   margin-bottom: 5px;
 }
 
-.login_btn {
-  font-size: 20px;
+.btnSignin {
+  background: var(--gradient1);
   color: white;
-  border-radius: 15px;
+  padding: 8px 20px;
   border: none;
-  background-color: #003a74;
-  width: 100%;
-  padding: 10px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  background: linear-gradient(-90deg, #003a74, #006ad5);
-  box-shadow: 1px 5px 9px rgba(211, 211, 211, 0.9);
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 14px;
 }
 
 .footer_card {
