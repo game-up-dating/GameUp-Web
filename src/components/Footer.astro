@@ -2,55 +2,72 @@
 
 ---
 
-<footers id="lab_social_icon_footer">
-  <!-- Include Font Awesome Stylesheet in Header -->
+<div class="footer-root py-5">
+  <footers id="lab_social_icon_footer">
+    <!-- Include Font Awesome Stylesheet in Header -->
 
-  <div class="container">
-    <div class="d-flex justify-content-center">
-      <div class="px-2">Terms of use</div>
-      <div class="px-2">Privacy Policy</div>
-      <div class="px-2">FAQ</div>
+    <div class="container">
+      <div class="d-flex justify-content-center py-2">
+        <div class="px-2 text-links">Terms of use</div>
+        <div class="px-2 text-links">Privacy Policy</div>
+        <div class="px-2 text-links">FAQ</div>
+      </div>
+      <div
+        class="text-center center-block d-flex justify-content-center py-2 icons"
+      >
+        <div class="px-3">
+          <a href="https://plus.google.com/+Bootsnipp-page">
+            <img src="images/icons/socials/facebook.png" />
+          </a>
+        </div>
+        <div class="px-3">
+          <a href="https://plus.google.com/+Bootsnipp-page">
+            <img src="images/icons/socials/instagram.png" />
+          </a>
+        </div>
+        <div class="px-3">
+          <a href="https://plus.google.com/+Bootsnipp-page">
+            <img src="images/icons/socials/twitter.png" />
+          </a>
+        </div>
+        <div class="px-3">
+          <a href="https://plus.google.com/+Bootsnipp-page">
+            <img src="images/icons/socials/linktree.png" />
+          </a>
+        </div>
+        <div class="px-3">
+          <a href="https://plus.google.com/+Bootsnipp-page">
+            <img src="images/icons/socials/tiktok.png" />
+          </a>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <img src="images/footer-logo.png" />
+      </div>
     </div>
-    <div class="text-center center-block d-flex justify-content-center">
-      <div>
-        <a href="https://plus.google.com/+Bootsnipp-page">
-          <img src="images/icons/socials/linktree.png" />
-        </a>
-      </div>
-      <div>
-        <a href="https://plus.google.com/+Bootsnipp-page">
-          <img src="images/icons/socials/linktree.png" />
-        </a>
-      </div>
-      <div>
-        <a href="https://plus.google.com/+Bootsnipp-page">
-          <img src="images/icons/socials/linktree.png" />
-        </a>
-      </div>
-      <div>
-        <a href="https://plus.google.com/+Bootsnipp-page">
-          <img src="images/icons/socials/linktree.png" />
-        </a>
-      </div>
-      <div>
-        <a href="https://plus.google.com/+Bootsnipp-page">
-          <img src="images/icons/socials/linktree.png" />
-        </a>
-      </div>
-    </div>
-  </div>
-</footers>
-
+  </footers>
+</div>
 <style>
+  .footer-root {
+    background-color: #fdb5cb;
+  }
+  footer {
+    background-color: #fdb5cb;
+  }
   #lab_social_icon_footer {
     padding: 40px 0;
-    background-color:;
-  }
 
-  #lab_social_icon_footer a {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .text-linkts #lab_social_icon_footer a {
     color: #333;
   }
 
+  .icons img {
+    width: 40px;
+  }
   #lab_social_icon_footer .social:hover {
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
