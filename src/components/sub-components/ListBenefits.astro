@@ -10,37 +10,56 @@ const { name, icon, description, sidebar } = Astro.props;
 ---
 
 <div class="container mt-3 mb-5">
-  <div>
-    <img src={icon} alt="" />
-    <!-- {sidebar ? <div class="vl" /> : null} -->
+  <div class="left-side">
+    <img src={icon} alt="" class="icon" />
+    {sidebar ? <div class="vl" /> : null}
   </div>
   <div class="right-side">
     <h3>{name}</h3>
-    <p>{description}</p>
+    <p class="text-justify">{description}</p>
   </div>
 </div>
 
 <style>
   .container {
-    -ms-grid-columns: 2fr 10fr;
-    grid-template-columns: 2fr 10fr;
-    display: -ms-grid;
     display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    align-items: start;
+  }
+  .left-side {
+    position: relative;
+    display: flex;
+    align-items: center;
   }
   .vl {
-    border-left: 2.5px solid var(--grey2);
-    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    height: calc(100% - 0.5em);
+    width: 2.5px;
+    background-color: var(--grey2);
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    z-index: 0;
+  }
+  .icon {
+    position: relative;
+    z-index: 1;
   }
   .right-side {
-    padding-top: 0.75em;
+    padding-left: 1em;
   }
   @media only screen and (max-width: 600px) {
     p {
       text-align: justify;
     }
-
     .container {
       padding: 0;
+    }
+    .left-side .vl {
+      left: 0;
+      transform: none;
     }
   }
 </style>
