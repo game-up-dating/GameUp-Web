@@ -1,0 +1,31 @@
+---
+interface Props {
+  text: string;
+  link?: string;
+}
+const { link = '#', text } = Astro.props;
+---
+
+<a class="" href={link}>
+  <button class="p-3 pt-2 pb-2"><span>{text}</span></button>
+</a>
+
+<style>
+
+  button {
+    background: transparent;
+    color: #313149;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    display: inline-block;
+    border-image: var(--gradient1) 1;
+    padding: 0.5em 1em;
+    border-radius: 12px; /* Ensures border-radius is applied */
+  }
+  button span {
+    background: var(--gradient1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+</style>

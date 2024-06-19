@@ -1,9 +1,8 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Work-Sans', sans-serif;
+  font-family: "Work-Sans", sans-serif;
   text-decoration: none;
 }
 
@@ -67,7 +66,7 @@
   border-radius: 5px;
   border: 1px solid #dddddd;
   color: #a0a6a3;
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   box-shadow: 1px 5px 9px rgba(211, 211, 211, 0.7);
   border-radius: 14px;
 }

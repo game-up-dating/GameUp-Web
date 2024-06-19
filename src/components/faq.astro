@@ -1,8 +1,10 @@
 ---
 import {AccordionComponent} from "@/components/sub-components/Accordian";
+import TransperantGradientButton from "@/components/sub-components/TransperantGradientButton.astro";
+
 ---
 
-<div id="faq" class="flex justify-center flex-col mt-5">
+<div id="faq" class="flex justify-center flex-col mt-5 p-5">
   <!-- <div class="circle-container"></div> -->
   <div class="header">
     <h1>Frequently Asked Questions</h1>
@@ -11,6 +13,7 @@ import {AccordionComponent} from "@/components/sub-components/Accordian";
   <div id="questions">
     <h2>Still have questions</h2>
     <p>Contact our support team for further assistance</p>
+    <TransperantGradientButton text="Contact" link="#" />
   </div>
 </div>
 
