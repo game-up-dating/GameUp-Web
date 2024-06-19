@@ -89,3 +89,8 @@
   margin-bottom: 10px; /* Space between list items */
 }
 
+.accordion-container{
+  display: flex;
+  justify-content: center;
+  
+}
