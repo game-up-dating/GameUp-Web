@@ -5,36 +5,29 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export function AccordianComponent() {
+export function AccordionComponent() {
   return (
-    <div className="flex justify-center items-center ">
-      <div className="flex-container">
+    <div className="accordion-container">
+      <div className="accordion-wrapper">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
-            <AccordionTrigger>
-              What is an AI dating assistant?{" "}
+            <AccordionTrigger className="accordion-trigger">
+              What is GameUp?
             </AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className="accordion-content">
               <p>
-                An AI dating assistant (also known as a virtual dating assistant
-                or online dating assistant) is an artificial intelligence
-                platform designed to enhance your dating experience. Powered by
-                artificial intelligence (AI), it analyses your conversation,
-                providing instant feedback and suggestions to revolutionize your
-                conversations
-              </p>
-              <p>
-                Rooted in machine learning and generative AI technology, these
-                assistants evaluate your interactions and craft responses that
-                are not only suitable but also engaging, ensuring your
-                conversations are always captivating and effective in building
-                meaningful connections.
+                Gameup is an AI-assisted chatting app designed to enhance user's
+                "dating skills". It uses AI-generated suggestions based on
+                user-uploaded conversations screenshots and preferred
+                "Flirtiness Level".
               </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger>How does GameUp work? </AccordionTrigger>
-            <AccordionContent>
+            <AccordionTrigger className="accordion-trigger">
+              How does GameUp work?
+            </AccordionTrigger>
+            <AccordionContent className="accordion-content">
               <p>
                 GameUp uses a combination of machine learning and generative AI
                 to analyze your responses and generate suggestions. You simply
@@ -47,7 +40,7 @@ export function AccordianComponent() {
                 You will also receive several recommendations for what to say
                 next that match the same tone and speaking style as the rest of
                 the conversation. You select the response that feels most
-                natural. Then, copy, paste, and wait for a response
+                natural. Then, copy, paste, and wait for a response.
               </p>
               <p>
                 Because GameUp mirrors your previous messages, responses never
@@ -58,10 +51,10 @@ export function AccordianComponent() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger>
+            <AccordionTrigger className="accordion-trigger">
               Can GameUp help me if I’m new to online dating?
             </AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className="accordion-content">
               <p>
                 Absolutely! GameUp works for everyone – whether you’re a dating
                 novice or a rizz master, you’ll learn new responses, leveling up
@@ -83,22 +76,25 @@ export function AccordianComponent() {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger>
+            <AccordionTrigger className="accordion-trigger">
               What dating apps is GameUp compatible with?
             </AccordionTrigger>
-            <AccordionContent>
-              GameUp doesn’t work directly with a dating app. Instead, you take
-              a quick screenshot of the conversation and upload it to GameUp.
-              That means GameUp is compatible with all dating apps. Whether
-              you’re after a Bumble or Tinder assistant, GameUp’s got your back.
+            <AccordionContent className="accordion-content">
+              <p>
+                GameUp doesn’t work directly with a dating app. Instead, you
+                take a quick screenshot of the conversation and upload it to
+                GameUp. That means GameUp is compatible with all dating apps.
+                Whether you’re after a Bumble or Tinder assistant, GameUp’s got
+                your back.
+              </p>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
-            <AccordionTrigger>
+            <AccordionTrigger className="accordion-trigger">
               What kind of feedback will I receive from GameUp?
             </AccordionTrigger>
-            <AccordionContent>
-              <p>GameUp provides two kinds of feedback</p>
+            <AccordionContent className="accordion-content">
+              <p>GameUp provides two kinds of feedback:</p>
               <ol>
                 <li>
                   Game or Flirtiness Score. Expressed as a percentage, it
@@ -110,7 +106,7 @@ export function AccordianComponent() {
                   Suggested Responses. Following on from the previous responses,
                   the AI generates three potential messages you could send next.
                   You can then copy and paste the response you like best and
-                  post it in the chat
+                  post it in the chat.
                 </li>
               </ol>
             </AccordionContent>
