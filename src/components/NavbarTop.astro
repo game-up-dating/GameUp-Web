@@ -1,6 +1,6 @@
 ---
-import { Navbar } from 'astro-bootstrap';
-import type { NavbarItemType } from 'astro-bootstrap';
+import { Navbar } from "astro-bootstrap";
+import type { NavbarItemType } from "astro-bootstrap";
 ---
 
 <Navbar class="navbar-expand-lg navbar" data-bs-theme="dark">
@@ -9,12 +9,7 @@ import type { NavbarItemType } from 'astro-bootstrap';
       <img class="logo-img" src="/images/logo.png" />
     </div>
     <!-- Hamburger menu icon -->
-    <div class="hamburger-menu" onclick="toggleMenu()">
-      <span>Features</span>
-      <span>Chat Assistant</span>
-      <span>Pricing</span>
-      <span>Blog</span>
-    </div>
+
     <div class="nav-link-container">
       <div class="nav-link">Features</div>
       <div class="nav-link">Chat Assistant</div>
@@ -26,16 +21,19 @@ import type { NavbarItemType } from 'astro-bootstrap';
     </div>
   </div>
 
+  <!-- Mobile Sidebar -->
+  <div id="mobile-sidebar" class="mobile-sidebar">
+    <div class="nav-link">Features</div>
+    <div class="nav-link">Chat Assistant</div>
+    <div class="nav-link">Pricing</div>
+    <div class="nav-link">Blog</div>
+    <button class="btn btn-sign-in">Sign In</button>
+  </div>
+
   <style>
     .sign-in-container {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
       justify-content: flex-end;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
     }
     .btn-sign-in {
@@ -58,56 +56,38 @@ import type { NavbarItemType } from 'astro-bootstrap';
     }
 
     #navbar {
-      display: -ms-grid;
       display: grid;
-      -ms-grid-columns: 1fr 3fr 1fr;
       grid-template-columns: 1fr 3fr 1fr;
       color: #333230;
-      font-family: 'Geist', sans-serif;
+      font-family: "Geist", sans-serif;
       font-weight: 500;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
     }
     .logo-img {
-      width: 100px; /* Updated width */
-      height: 50px; /* Updated height */
-      -o-object-fit: contain;
-      object-fit: contain; /* Maintain aspect ratio */
+      width: 100px;
+      height: 50px;
+      object-fit: contain;
     }
     .logo {
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
       justify-content: end;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
     }
     .nav-link-container {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -ms-grid-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       padding: 0.5em;
       gap: 40px;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
     }
 
     .nav-link {
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
     }
 
     /* Hamburger menu styles */
     .hamburger-menu {
-      display: none; /* Hide by default */
+      display: none;
       cursor: pointer;
     }
     .bar {
@@ -116,38 +96,47 @@ import type { NavbarItemType } from 'astro-bootstrap';
       height: 3px;
       background-color: var(--black);
       margin: 5px auto;
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
     }
     .menu-visible .bar:nth-child(1) {
-      -webkit-transform: translateY(8px) rotate(45deg);
-      -ms-transform: translateY(8px) rotate(45deg);
       transform: translateY(8px) rotate(45deg);
     }
     .menu-visible .bar:nth-child(2) {
       opacity: 0;
     }
     .menu-visible .bar:nth-child(3) {
-      -webkit-transform: translateY(-8px) rotate(-45deg);
-      -ms-transform: translateY(-8px) rotate(-45deg);
       transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Mobile sidebar styles */
+    .mobile-sidebar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg);
+      z-index: 1000;
+      padding-top: 60px;
+      text-align: center;
+      flex-direction: column;
+    }
+    .mobile-sidebar .nav-link {
+      display: block;
+      padding: 10px 0;
+      color: var(--black);
     }
 
     /* Media query for mobile devices */
     @media (max-width: 768px) {
       .nav-link-container {
-        display: none; /* Hide regular navigation links */
+        display: none;
       }
       .hamburger-menu {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex; /* Show hamburger menu icon */
-        -ms-flex-pack: distribute;
+        display: flex;
         justify-content: space-around;
         font-size: smaller;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
       }
 
@@ -159,14 +148,12 @@ import type { NavbarItemType } from 'astro-bootstrap';
 
   <script>
     function toggleMenu() {
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const mobileSidebar = document.getElementById('mobile-sidebar');
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const mobileSidebar = document.getElementById("mobile-sidebar");
 
-      // Type guard to ensure hamburgerMenu and mobileSidebar are not null
       if (hamburgerMenu && mobileSidebar) {
-        hamburgerMenu.classList.toggle('menu-visible');
-        mobileSidebar.style.display =
-          mobileSidebar.style.display === 'none' ? 'block' : 'none';
+        hamburgerMenu.classList.toggle("menu-visible");
+        mobileSidebar.style.display = mobileSidebar.style.display === "none" ? "flex" : "none";
       }
     }
   </script>

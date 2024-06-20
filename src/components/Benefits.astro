@@ -1,22 +1,22 @@
 ---
-import GradientButton from './sub-components/GradientButton.astro';
-import ListBenefits from './sub-components/ListBenefits.astro';
+import GradientButton from "./sub-components/GradientButton.astro";
+import ListBenefits from "./sub-components/ListBenefits.astro";
 ---
 
 <div id="container">
-  <div class="grid px-5">
+  <div class="grid sm:px-5 px-4">
     <div class="md:p-5 pt-4">
       <div class="md:p-5 pt-0">
         <h1>Unlock Your Dating Potential With GameUp</h1>
-        <p>
-          Whether you’re just breaking the ice or deepening a conversation, GameUp’s intelligent prompts, tips,
-          and personalized feedback help you achieve your relationship goals. Don’t let conversations lose their
-          excitement – keep your love interests coming back
+        <p class="text-justify sm:text-start">
+          Whether you’re just breaking the ice or deepening a conversation, GameUp’s intelligent prompts, tips, and
+          personalized feedback help you achieve your relationship goals. Don’t let conversations lose their excitement
+          – keep your love interests coming back
         </p>
         <GradientButton text="Sign In" />
       </div>
     </div>
-    <div class="p-5 pt-2">
+    <div class="sm:p-5 sm:pt-2">
       <ListBenefits
         name="Step-by-Step"
         icon="/images/icons/step-by-step.png"

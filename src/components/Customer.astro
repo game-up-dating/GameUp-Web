@@ -1,14 +1,15 @@
 ---
-import { CarouselSpacing } from './sub-components/Customer';
+import { CarouselSpacing } from "./sub-components/Customer";
 ---
 
 <div id="main-container ">
   <div id="top-row">
-    <div id="top-text" class="flex flex-col pl-4">
-      <div class="p-5">
-        <h1>See How GameUp Users Found Their Perfect Match        </h1>
-        <p>
-          Ready to meet your future partner? You’re not alone. GameUp users report deeper conversations, more dates, and greater chemistry. 
+    <div id="top-text" class="flex flex-col sm:pl-4">
+      <div class="sm:p-5 px-2">
+        <h1>See How GameUp Users Found Their Perfect Match</h1>
+        <p class="text-justify">
+          Ready to meet your future partner? You’re not alone. GameUp users report deeper conversations, more dates, and
+          greater chemistry.
         </p>
       </div>
     </div>
@@ -46,5 +47,11 @@ import { CarouselSpacing } from './sub-components/Customer';
   }
   #main-container {
     background-color: white;
+  }
+  @media screen and (max-width: 425px) {
+    #top-row {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
 </style>
