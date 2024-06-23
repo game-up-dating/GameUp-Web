@@ -19,11 +19,11 @@ import { Image } from "astro:assets";
   <div class="row d-flex">
     <div class="circle-container"></div>
     <div id="first-img" class="col-6 d-flex justify-content-end">
-      <Image src="/images/HeroContainer1.webp" alt="Hero Image 1" width={400} height={400} />
+      <Image src="/images/HeroContainer1.webp" alt="Hero Image 1" width={400} height={400} loading="eager" />
       <!-- Change to loading="preload" -->
     </div>
     <div class="col-6">
-      <Image src="/images/HeroContainer1.webp" alt="Hero Image 1" width={400} height={400} />
+      <Image src="/images/HeroContainer1.webp" alt="Hero Image 1" width={400} height={400} loading="eager" />
       <!-- Change to loading="preload" -->
     </div>
   </div>

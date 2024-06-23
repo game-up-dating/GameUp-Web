@@ -4,13 +4,13 @@ import TransperantGradientButton from "@/components/sub-components/TransperantGr
 import GradientButton from "@/components/sub-components/GradientButton.astro";
 ---
 
-<div id="faq" class="flex justify-center flex-col mt-5 p-3 sm:p-5">
+<div id="faq" class="flex justify-center flex-col mt-5 p-3 p-sm-5">
   <!-- <div class="circle-container"></div> -->
   <div class="header py-2">
     <h1>Frequently Asked Questions</h1>
   </div>
   <AccordionComponent client:only="react" />
-  <div id="questions" class="py-2">
+  <div id="questions" class="py-sm-5">
     <h2>Still have questions</h2>
     <p>Contact our support team for further assistance</p>
     <GradientButton text="Contact" link="#" />
