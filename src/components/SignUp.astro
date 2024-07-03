@@ -1,5 +1,5 @@
 ---
-import SignUpForm from "./sub-components/SignUpForm.astro";
+import SignUpForm from "./sub-components/SignUpForm";
 import { Image } from "astro:assets";
 ---
 
@@ -15,7 +15,7 @@ import { Image } from "astro:assets";
     </p>
   </div>
 
-  <SignUpForm class="mb-5" />
+  <SignUpForm client:load />
   <div class="row d-flex">
     <div class="circle-container"></div>
     <div id="first-img" class="col-6 d-flex justify-content-end">
