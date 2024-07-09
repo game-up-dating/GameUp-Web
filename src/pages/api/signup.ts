@@ -1,38 +1,69 @@
 import { MongoClient, Db, Collection } from "mongodb";
 import type { APIRoute } from "astro";
+import { parse } from "querystring";
+
 import dotenv from "dotenv";
 
 // Load environment variables
 dotenv.config();
 
-const uri: string =
-  "mongodb+srv://srivishalsivasubramanian:f%23%23ksociety@cluster0.3xlz28h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-const client: MongoClient = new MongoClient(uri);
-const dbName: string = "early-access";
-const collectionName: string = "emails";
+const uri: string = import.meta.env.MONGODB_URI || "";
+const dbName: string = import.meta.env.MONGODB_DB_NAME || "early-access";
+const collectionName: string =
+  import.meta.env.MONGODB_COLLECTION_NAME || "emails";
 
-let message: string = "";
-let isSuccess: boolean = false;
+let cachedClient: MongoClient | null = null;
+let cachedDb: Db | null = null;
 
 interface SignUp {
   email: string;
   signupDate: Date;
 }
 
+async function connectToDatabase(): Promise<{ client: MongoClient; db: Db }> {
+  if (cachedClient && cachedDb) {
+    return { client: cachedClient, db: cachedDb };
+  }
+
+  if (!uri) {
+    throw new Error("MONGODB_URI is not defined in the environment variables.");
+  }
+
+  const client: MongoClient = new MongoClient(uri);
+  await client.connect();
+  const db = client.db(dbName);
+
+  cachedClient = client;
+  cachedDb = db;
+
+  return { client, db };
+}
+
 export const POST: APIRoute = async ({ request }) => {
+  let message: string = "";
+  let isSuccess: boolean = false;
+
   try {
     const contentType = request.headers.get("content-type");
     let email: string = "";
-    if (contentType === "application/x-www-form-urlencoded") {
-      const bodyText = await request.formData();
-      email = bodyText.get("email") as string;
+
+    console.log("Received content type:", contentType);
+
+    if (contentType?.includes("multipart/form-data")) {
+      const formData = await request.formData();
+      email = formData.get("email") as string;
+    } else if (contentType === "application/x-www-form-urlencoded") {
+      const body = await request.formData();
+      email = body.get("email") as string;
     } else if (contentType === "application/json") {
       const body = await request.json();
       email = body.email;
+    } else {
+      throw new Error(`Unsupported content type: ${contentType}`);
     }
+    console.log("Email received:", email);
 
-    await client.connect();
-    const db: Db = client.db(dbName);
+    const { db } = await connectToDatabase();
     const collection: Collection<SignUp> = db.collection(collectionName);
 
     await collection.insertOne({ email, signupDate: new Date() });
@@ -48,7 +79,7 @@ export const POST: APIRoute = async ({ request }) => {
       { status: 200, headers: { "Content-Type": "application/json" } },
     );
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Error occurred:", error);
     message = "An error occurred. Please try again.";
     isSuccess = false;
     return new Response(
@@ -58,7 +89,5 @@ export const POST: APIRoute = async ({ request }) => {
       }),
       { status: 500, headers: { "Content-Type": "application/json" } },
     );
-  } finally {
-    await client.close();
   }
 };

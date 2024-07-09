@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
+    "@astrojs/node": "latest",
     "@astrojs/react": "^3.1.1",
     "@astrojs/tailwind": "^5.1.0",
     "@radix-ui/react-accordion": "^1.1.2",
@@ -18,7 +19,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
-    "astro": "^4.5.14",
+    "astro": "latest",
     "astro-bootstrap": "^0.6.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
