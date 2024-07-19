@@ -5,9 +5,12 @@ import tailwind from "@astrojs/tailwind";
 import node from "@astrojs/node";
 
 // Load environment variables from .env file
+import netlify from "@astrojs/netlify";
 dotenv.config();
 
 // Astro configuration
+
+// https://astro.build/config
 export default defineConfig({
   output: "server",
   integrations: [
@@ -17,7 +20,9 @@ export default defineConfig({
       // applyBaseStyles: false,
     }),
   ],
-  adapter: node({ mode: "standalone" }),
+  adapter: netlify({
+    edgeMiddleware: true,
+  }),
   vite: {
     build: {
       rollupOptions: {
