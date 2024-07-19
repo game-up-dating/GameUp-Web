@@ -48,11 +48,6 @@ const SignupForm: React.FC = () => {
           </button>
         </div>
       </form>
-      {message && (
-        <div id="message" className={isError ? "error" : "success"}>
-          {message}
-        </div>
-      )}
     </div>
   );
 };
