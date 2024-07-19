@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -38,6 +39,10 @@
   "devDependencies": {
     "@types/node": "^20.14.9",
     "prettier": "^3.3.2",
-    "prettier-plugin-astro": "^0.14.0"
+    "prettier-plugin-astro": "^0.14.0",
+    "npm-force-resolutions": "^0.0.3"
+  },
+  "resolutions": {
+    "braces": "^3.0.3"
   }
 }
