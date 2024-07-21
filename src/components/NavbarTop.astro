@@ -8,26 +8,18 @@ import type { NavbarItemType } from "astro-bootstrap";
     <div class="logo">
       <img class="logo-img" src="/images/logo.png" />
     </div>
-    <!-- Hamburger menu icon -->
 
-    <div class="nav-link-container">
-      <div class="nav-link">Features</div>
-      <div class="nav-link">Chat Assistant</div>
-      <div class="nav-link">Pricing</div>
-      <div class="nav-link">Blog</div>
-    </div>
     <div class="sign-in-container">
-      <button class="btn btn-sign-in">Sign In</button>
+      <button class="btn btn-sign-in">Get Early Access</button>
     </div>
   </div>
 
-  <!-- Mobile Sidebar -->
   <div id="mobile-sidebar" class="mobile-sidebar">
-    <div class="nav-link">Features</div>
+    <!-- <div class="nav-link">Features</div>
     <div class="nav-link">Chat Assistant</div>
     <div class="nav-link">Pricing</div>
-    <div class="nav-link">Blog</div>
-    <button class="btn btn-sign-in">Sign In</button>
+    <div class="nav-link">Blog</div> -->
+    <button class="btn btn-sign-in">Get Early Access</button>
   </div>
 
   <style>
@@ -37,13 +29,17 @@ import type { NavbarItemType } from "astro-bootstrap";
       align-items: center;
     }
     .btn-sign-in {
-      background: var(--gradient1);
+      background: linear-gradient(to right, #ff416c, #ff4b2b); /* Gradient background */
       color: white;
-      padding: 8px 20px;
+      padding: 10px 20px; /* Adjusted padding for better spacing */
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
+      border-radius: 50px; /* Make the button pill-shaped */
+      font-size: 12px;
       cursor: pointer;
+      transition: background 0.3s ease; /* Smooth transition for hover effect */
+    }
+    .btn-sign-in:hover {
+      background: linear-gradient(to left, #ff416c, #ff4b2b); /* Hover effect */
     }
     .navbar {
       background-color: var(--bg);
@@ -85,7 +81,6 @@ import type { NavbarItemType } from "astro-bootstrap";
       display: flex;
     }
 
-    /* Hamburger menu styles */
     .hamburger-menu {
       display: none;
       cursor: pointer;
@@ -108,7 +103,6 @@ import type { NavbarItemType } from "astro-bootstrap";
       transform: translateY(-8px) rotate(-45deg);
     }
 
-    /* Mobile sidebar styles */
     .mobile-sidebar {
       display: none;
       position: fixed;
@@ -128,7 +122,6 @@ import type { NavbarItemType } from "astro-bootstrap";
       color: var(--black);
     }
 
-    /* Media query for mobile devices */
     @media (max-width: 768px) {
       .nav-link-container {
         display: none;
@@ -146,7 +139,7 @@ import type { NavbarItemType } from "astro-bootstrap";
     }
   </style>
 
-  <script>
+  <script lang="ts">
     function toggleMenu() {
       const hamburgerMenu = document.querySelector(".hamburger-menu");
       const mobileSidebar = document.getElementById("mobile-sidebar");

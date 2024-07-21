@@ -30,9 +30,16 @@ const SignupForm: React.FC = () => {
   };
 
   return (
-    <div id="signupform_container" className="row input-row mb-5">
-      <form id="signupForm" onSubmit={handleSubmit} className="signup-form">
-        <div className="gradient-border-mask ">
+    <div
+      id="signupform_container"
+      className="row input-row mb-5 justify-content-center"
+    >
+      <form
+        id="signupForm"
+        onSubmit={handleSubmit}
+        className="signup-form d-flex align-items-center"
+      >
+        <div className="gradient-border-mask mr-2">
           <input
             type="email"
             id="email"
@@ -48,6 +55,11 @@ const SignupForm: React.FC = () => {
           </button>
         </div>
       </form>
+      {message && (
+        <div className={isError ? "error-message" : "success-message"}>
+          {message}
+        </div>
+      )}
     </div>
   );
 };
