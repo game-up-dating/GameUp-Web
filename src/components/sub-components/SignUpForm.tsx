@@ -4,6 +4,14 @@ const SignupForm: React.FC = () => {
   const [message, setMessage] = useState<string | null>(null);
   const [isError, setIsError] = useState<boolean>(false);
 
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+    e.target.placeholder = "";
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+    e.target.placeholder = "@gmail.com";
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -42,11 +50,13 @@ const SignupForm: React.FC = () => {
         <div className="gradient-border-mask mr-2">
           <input
             type="email"
-            id="email"
+            id="navbar-email"
             name="email"
             className="gradient-input"
             placeholder="@gmail.com"
             required
+            onFocus={handleFocus}
+            onBlur={handleBlur}
           />
         </div>
         <div id="signupForm_subcontainer">
